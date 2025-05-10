@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useToast } from "@/components/ui/toast";
+import { useToast } from "@/hooks/use-toast";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
@@ -13,7 +12,7 @@ const Index = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const { toast } = useToast();
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // В реальном приложении здесь был бы API-запрос
@@ -36,26 +35,30 @@ const Index = () => {
               Освободите пространство от ненужной техники в Губкине
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Бесплатно вывозим старую технику и электронику, 
-              заботясь об экологии и вашем комфорте
+              Бесплатно вывозим старую технику и электронику, заботясь об
+              экологии и вашем комфорте
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-[#4CAF50] hover:bg-white/90"
                 onClick={() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 <Icon name="PhoneCall" className="mr-2 h-5 w-5" />
                 Оставить заявку
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-white text-white hover:bg-white/20"
                 onClick={() => {
-                  document.getElementById('advantages')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("advantages")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 <Icon name="Info" className="mr-2 h-5 w-5" />
@@ -69,8 +72,10 @@ const Index = () => {
       {/* What We Take Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">Что мы вывозим</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">
+            Что мы вывозим
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="hover-scale">
               <CardContent className="pt-6 text-center">
@@ -78,37 +83,48 @@ const Index = () => {
                   <Icon name="Monitor" className="h-10 w-10 text-[#4CAF50]" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Компьютерная техника</h3>
-                <p className="text-gray-600">Компьютеры, ноутбуки, мониторы, принтеры и периферия</p>
+                <p className="text-gray-600">
+                  Компьютеры, ноутбуки, мониторы, принтеры и периферия
+                </p>
               </CardContent>
             </Card>
-            
+
             <Card className="hover-scale">
               <CardContent className="pt-6 text-center">
                 <div className="rounded-full bg-[#1976D2]/10 p-4 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  <Icon name="Smartphone" className="h-10 w-10 text-[#1976D2]" />
+                  <Icon
+                    name="Smartphone"
+                    className="h-10 w-10 text-[#1976D2]"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Мобильные устройства</h3>
-                <p className="text-gray-600">Телефоны, планшеты, электронные книги и аксессуары</p>
+                <p className="text-gray-600">
+                  Телефоны, планшеты, электронные книги и аксессуары
+                </p>
               </CardContent>
             </Card>
-            
+
             <Card className="hover-scale">
               <CardContent className="pt-6 text-center">
                 <div className="rounded-full bg-[#FF9800]/10 p-4 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                   <Icon name="Tv" className="h-10 w-10 text-[#FF9800]" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Бытовая техника</h3>
-                <p className="text-gray-600">Стиральные машины, холодильники, микроволновки</p>
+                <p className="text-gray-600">
+                  Стиральные машины, холодильники, микроволновки
+                </p>
               </CardContent>
             </Card>
-            
+
             <Card className="hover-scale">
               <CardContent className="pt-6 text-center">
                 <div className="rounded-full bg-[#9C27B0]/10 p-4 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                   <Icon name="Radio" className="h-10 w-10 text-[#9C27B0]" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Прочая электроника</h3>
-                <p className="text-gray-600">Аудиотехника, электроинструменты и другие устройства</p>
+                <p className="text-gray-600">
+                  Аудиотехника, электроинструменты и другие устройства
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -118,48 +134,50 @@ const Index = () => {
       {/* Gallery Section */}
       <section className="py-20 bg-[#F5F5F5]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">Примеры техники, которую мы забираем</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">
+            Примеры техники, которую мы забираем
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/01e17633-f5c7-4469-930c-2996103854b2.jpg" 
-                alt="Стиральная машина" 
+              <img
+                src="https://cdn.poehali.dev/files/01e17633-f5c7-4469-930c-2996103854b2.jpg"
+                alt="Стиральная машина"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/e4cdf3de-b0f0-43a6-8d23-29783cac0b17.jpg" 
-                alt="Аудиотехника" 
+              <img
+                src="https://cdn.poehali.dev/files/e4cdf3de-b0f0-43a6-8d23-29783cac0b17.jpg"
+                alt="Аудиотехника"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/925c60e2-7d65-422f-9b2c-50597d82d5bb.jpg" 
-                alt="Старое радио" 
+              <img
+                src="https://cdn.poehali.dev/files/925c60e2-7d65-422f-9b2c-50597d82d5bb.jpg"
+                alt="Старое радио"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/e0b13567-0f30-43f6-88de-8b5f128fc337.jpg" 
-                alt="Разобранная техника" 
+              <img
+                src="https://cdn.poehali.dev/files/e0b13567-0f30-43f6-88de-8b5f128fc337.jpg"
+                alt="Разобранная техника"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://images.unsplash.com/photo-1550009158-9ebf69173e03" 
-                alt="Электроника" 
+              <img
+                src="https://images.unsplash.com/photo-1550009158-9ebf69173e03"
+                alt="Электроника"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img 
-                src="https://images.unsplash.com/photo-1601791074012-d4e0ee30d77c" 
-                alt="Компьютерная техника" 
+              <img
+                src="https://images.unsplash.com/photo-1601791074012-d4e0ee30d77c"
+                alt="Компьютерная техника"
                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -170,8 +188,10 @@ const Index = () => {
       {/* Advantages Section */}
       <section id="advantages" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">Почему выбирают нас</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-16 font-playfair">
+            Почему выбирают нас
+          </h2>
+
           <Tabs defaultValue="convenient" className="w-full max-w-4xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
               <TabsTrigger value="convenient">Удобно</TabsTrigger>
@@ -179,39 +199,60 @@ const Index = () => {
               <TabsTrigger value="eco">Экологично</TabsTrigger>
               <TabsTrigger value="fast">Быстро</TabsTrigger>
             </TabsList>
-            
-            <TabsContent value="convenient" className="mt-8 p-6 bg-[#F5F5F5] rounded-lg">
+
+            <TabsContent
+              value="convenient"
+              className="mt-8 p-6 bg-[#F5F5F5] rounded-lg"
+            >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/3 flex justify-center">
                   <div className="rounded-full bg-[#4CAF50]/10 p-6">
-                    <Icon name="LayoutGrid" className="h-20 w-20 text-[#4CAF50]" />
+                    <Icon
+                      name="LayoutGrid"
+                      className="h-20 w-20 text-[#4CAF50]"
+                    />
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <h3 className="text-2xl font-bold mb-4">Максимальное удобство для вас</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Максимальное удобство для вас
+                  </h3>
                   <p className="text-gray-700 mb-4">
-                    Мы подстраиваемся под ваше расписание и приезжаем в удобное для вас время.
-                    Никаких хлопот с транспортировкой - мы всё сделаем сами.
+                    Мы подстраиваемся под ваше расписание и приезжаем в удобное
+                    для вас время. Никаких хлопот с транспортировкой - мы всё
+                    сделаем сами.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
                       <span>Выбор удобного времени вывоза</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
                       <span>Подъем с любого этажа</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
                       <span>Самостоятельный вынос техники</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </TabsContent>
-            
-            <TabsContent value="free" className="mt-8 p-6 bg-[#F5F5F5] rounded-lg">
+
+            <TabsContent
+              value="free"
+              className="mt-8 p-6 bg-[#F5F5F5] rounded-lg"
+            >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/3 flex justify-center">
                   <div className="rounded-full bg-[#1976D2]/10 p-6">
@@ -219,29 +260,44 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <h3 className="text-2xl font-bold mb-4">Полностью бесплатно</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Полностью бесплатно
+                  </h3>
                   <p className="text-gray-700 mb-4">
-                    Мы не берем денег за вывоз техники. Это абсолютно бесплатная услуга для всех жителей Губкина и ближайших районов.
+                    Мы не берем денег за вывоз техники. Это абсолютно бесплатная
+                    услуга для всех жителей Губкина и ближайших районов.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#1976D2] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#1976D2] mr-2"
+                      />
                       <span>Бесплатный вывоз любой техники</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#1976D2] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#1976D2] mr-2"
+                      />
                       <span>Никаких скрытых платежей</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#1976D2] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#1976D2] mr-2"
+                      />
                       <span>Освобождение вашего пространства без затрат</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </TabsContent>
-            
-            <TabsContent value="eco" className="mt-8 p-6 bg-[#F5F5F5] rounded-lg">
+
+            <TabsContent
+              value="eco"
+              className="mt-8 p-6 bg-[#F5F5F5] rounded-lg"
+            >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/3 flex justify-center">
                   <div className="rounded-full bg-[#4CAF50]/10 p-6">
@@ -249,30 +305,47 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="md:w-2/3">
-                  <h3 className="text-2xl font-bold mb-4">Забота об экологии</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Забота об экологии
+                  </h3>
                   <p className="text-gray-700 mb-4">
-                    Мы гарантируем экологичную утилизацию техники. Ваша старая техника не окажется на свалке, 
-                    а будет правильно переработана или отреставрирована.
+                    Мы гарантируем экологичную утилизацию техники. Ваша старая
+                    техника не окажется на свалке, а будет правильно
+                    переработана или отреставрирована.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
                       <span>Безопасная утилизация опасных элементов</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
-                      <span>Переработка материалов для вторичного использования</span>
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
+                      <span>
+                        Переработка материалов для вторичного использования
+                      </span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#4CAF50] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#4CAF50] mr-2"
+                      />
                       <span>Сертифицированные методы утилизации</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </TabsContent>
-            
-            <TabsContent value="fast" className="mt-8 p-6 bg-[#F5F5F5] rounded-lg">
+
+            <TabsContent
+              value="fast"
+              className="mt-8 p-6 bg-[#F5F5F5] rounded-lg"
+            >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/3 flex justify-center">
                   <div className="rounded-full bg-[#FF9800]/10 p-6">
@@ -282,20 +355,32 @@ const Index = () => {
                 <div className="md:w-2/3">
                   <h3 className="text-2xl font-bold mb-4">Оперативный вывоз</h3>
                   <p className="text-gray-700 mb-4">
-                    Мы ценим ваше время, поэтому организуем вывоз максимально быстро.
-                    В большинстве случаев мы приезжаем на следующий день после заявки.
+                    Мы ценим ваше время, поэтому организуем вывоз максимально
+                    быстро. В большинстве случаев мы приезжаем на следующий день
+                    после заявки.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#FF9800] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#FF9800] mr-2"
+                      />
                       <span>Быстрое согласование времени</span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#FF9800] mr-2" />
-                      <span>Вывоз в день обращения (при наличии возможности)</span>
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#FF9800] mr-2"
+                      />
+                      <span>
+                        Вывоз в день обращения (при наличии возможности)
+                      </span>
                     </li>
                     <li className="flex items-center">
-                      <Icon name="Check" className="h-5 w-5 text-[#FF9800] mr-2" />
+                      <Icon
+                        name="Check"
+                        className="h-5 w-5 text-[#FF9800] mr-2"
+                      />
                       <span>Пунктуальность и ответственность</span>
                     </li>
                   </ul>
@@ -312,12 +397,15 @@ const Index = () => {
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="flex flex-col md:flex-row">
               <div className="bg-gradient-to-br from-[#4CAF50] to-[#1976D2] p-8 text-white md:w-1/2">
-                <h2 className="text-3xl font-bold mb-6 font-playfair">Оставьте заявку</h2>
+                <h2 className="text-3xl font-bold mb-6 font-playfair">
+                  Оставьте заявку
+                </h2>
                 <p className="mb-8">
-                  Заполните форму, и мы свяжемся с вами, чтобы договориться о времени вывоза техники.
-                  Это бесплатно и займет всего несколько минут.
+                  Заполните форму, и мы свяжемся с вами, чтобы договориться о
+                  времени вывоза техники. Это бесплатно и займет всего несколько
+                  минут.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <Icon name="MapPin" className="h-6 w-6 mr-3 mt-0.5" />
@@ -326,7 +414,7 @@ const Index = () => {
                       <p>г. Губкин, Белгородская область</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Icon name="Phone" className="h-6 w-6 mr-3 mt-0.5" />
                     <div>
@@ -334,7 +422,7 @@ const Index = () => {
                       <p>+7 (919) 288-91-45</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <Icon name="Clock" className="h-6 w-6 mr-3 mt-0.5" />
                     <div>
@@ -345,11 +433,14 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-8 md:w-1/2">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Ваше имя
                     </label>
                     <Input
@@ -360,9 +451,12 @@ const Index = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Телефон
                     </label>
                     <Input
@@ -373,9 +467,12 @@ const Index = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Что нужно вывезти
                     </label>
                     <Textarea
@@ -386,8 +483,11 @@ const Index = () => {
                       rows={4}
                     />
                   </div>
-                  
-                  <Button type="submit" className="w-full bg-[#4CAF50] hover:bg-[#3d8c40]">
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#4CAF50] hover:bg-[#3d8c40]"
+                  >
                     Отправить заявку
                   </Button>
                 </form>
@@ -402,13 +502,15 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between">
             <div className="mb-8 md:mb-0">
-              <h3 className="text-2xl font-bold mb-4 font-playfair">Вывоз техники в Губкине</h3>
+              <h3 className="text-2xl font-bold mb-4 font-playfair">
+                Вывоз техники в Губкине
+              </h3>
               <p className="max-w-md opacity-75">
-                Бесплатный вывоз и утилизация старой техники и электроники в Губкине.
-                Мы заботимся о вашем комфорте и окружающей среде.
+                Бесплатный вывоз и утилизация старой техники и электроники в
+                Губкине. Мы заботимся о вашем комфорте и окружающей среде.
               </p>
             </div>
-            
+
             <div className="flex flex-col md:flex-row gap-8">
               <div>
                 <h4 className="text-lg font-semibold mb-3">Контакты</h4>
@@ -423,36 +525,60 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold mb-3">Навигация</h4>
                 <ul className="space-y-2 opacity-75">
                   <li>
-                    <a href="#" className="hover:text-[#4CAF50] transition-colors">Главная</a>
+                    <a
+                      href="#"
+                      className="hover:text-[#4CAF50] transition-colors"
+                    >
+                      Главная
+                    </a>
                   </li>
                   <li>
-                    <a href="#advantages" className="hover:text-[#4CAF50] transition-colors">Преимущества</a>
+                    <a
+                      href="#advantages"
+                      className="hover:text-[#4CAF50] transition-colors"
+                    >
+                      Преимущества
+                    </a>
                   </li>
                   <li>
-                    <a href="#contact" className="hover:text-[#4CAF50] transition-colors">Контакты</a>
+                    <a
+                      href="#contact"
+                      className="hover:text-[#4CAF50] transition-colors"
+                    >
+                      Контакты
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="opacity-75 text-sm mb-4 md:mb-0">
               © 2025 Вывоз техники в Губкине. Все права защищены.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-[#4CAF50] transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-[#4CAF50] transition-colors"
+              >
                 <Icon name="Facebook" className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white hover:text-[#4CAF50] transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-[#4CAF50] transition-colors"
+              >
                 <Icon name="Instagram" className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white hover:text-[#4CAF50] transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-[#4CAF50] transition-colors"
+              >
                 <Icon name="MessageCircle" className="h-5 w-5" />
               </a>
             </div>
